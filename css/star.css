@@ -1,0 +1,7 @@
+#hello{text-align:center;font-weight:bold;font-size:50px;color:#C5E3F6;}
+#rightblock{width:150px;height:1540px;background-color:#FCCDE2;border:3px solid #FCEFEE;}
+#bottomblock{height:30px;background-color:#FC5C9C;bottom: 0px;font-size:10;text-align:center;}
+#selfie{position:absolute;top:70px;right:200px;}
+#about{position:absolute;left:200;font-size:26;}
+.linkofusually{text-align: center;margin:auto;position:fixed;bottom:20px;width:3%;}
+body{background-color:#FCEFEE;}
