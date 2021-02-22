@@ -5,3 +5,6 @@
 #about{position:absolute;left:200;font-size:26;}
 .linkofusually{text-align: center;margin:auto;position:fixed;bottom:20px;width:3%;}
 body{background-color:#FCEFEE;}
+
+#now{text-align:center;font-weight:bold;font-size:50px;color:#747f82;}
+#updat{position:absolute;right:80px;bottom:80px;}
