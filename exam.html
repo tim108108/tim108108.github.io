@@ -11,37 +11,52 @@
 <div id="now">
     <div id="nowdate"></div>
     <div id="nowtime"></div>
-
+<<<<<<<<< Temporary merge branch 1
+    <br>應到人數：
+    <div id="should"></div>
+    <br>實到人數：
+    <div id="real"></div>
+    <br>剩餘時間：
+</div>
+<div>
+    <form id="updat">
+        <br>應到人數&emsp;<input maxlength="3" name="should" size="1">
+        <br>實到人數&emsp;<input maxlength="3" name="real" size="1">
+=========
     <br>
     應到人數：
     <div id="should"></div>
     實到人數：
     <div id="real"></div>
     剩餘時間：
-    <div id="sel"></div>
 </div>
 <div>
     <form id="updat">
         <br>應到人數<input maxlength="3" name="should" size="1">
         <br>實到人數<input maxlength="3" name="real" size="1">
+>>>>>>>>> Temporary merge branch 2
         <br>考試時間&emsp;
-        <select name="sel">
+        <select>
             <option>請選擇時間</option>
-            <option value=1>1 hr</option>
-            <option value=1.5>1.5 hr</option>
-            <option value=2>2 hrs</option>
-            <option value=2.5>2.5 hrs</option>
-            <option value=3>3 hrs</option>
-            <option value=3.5>3.5 hrs</option>
-            <option value=4>4 hrs</option>
-            <option value=4.5>4.5 hrs</option>
+            <option>1 hr</option>
+            <option>1.5 hr</option>
+            <option>2 hrs</option>
+            <option>2.5 hrs</option>
+            <option>3 hrs</option>
+            <option>3.5 hrs</option>
+            <option>4 hrs</option>
+            <option>4.5 hrs</option>
         </select>
         <!--
         <br>
         <input type="number" min="0" max="23" placeholder="00">:
         <input type="number" min="0" max="59" placeholder="00">
         -->
+<<<<<<<<< Temporary merge branch 1
+        <br><input onclick="processFormData()" type="submit" value="update">
+=========
         <br><input onclick="processFormData()" type="button" value="update">
+>>>>>>>>> Temporary merge branch 2
         <input type="reset" value="Reset">
     </form>
 </div>
