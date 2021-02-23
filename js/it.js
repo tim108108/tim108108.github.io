@@ -21,14 +21,14 @@ function processFormData() {
   var sel = form.elements.sel.value;
   document.getElementById('should').innerHTML = should;
   document.getElementById('real').innerHTML = real;
-  while (sels) {
+
   sels = (sel*60*60-1);
   selm = parseInt(sels/60);
   selh = parseInt(selm/60);
   sels = (sel*60*60-1)%60%60;
 
   document.getElementById('sel').innerHTML = selh+'時'+selm+'分'+sels+'秒';
-  }
+
   //setInterval('alertFunc()');
   //alert("sel" + sel );
   //alert("should " + should + "\nreal " + real);
