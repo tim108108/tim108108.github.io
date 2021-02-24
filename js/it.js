@@ -33,6 +33,7 @@ function processFormData() {
     h +=1;
     }
     document.getElementById('sel').innerHTML = h+ '時' + mi + '分';
+    if(sel==0){document.getElementById('sel').innerHTML = ' ';}
 //=============================================================
 //    document.getElementById('sel').innerHTML = sel;
 //    alert("should " + should + "real " + real);
