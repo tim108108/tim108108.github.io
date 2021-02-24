@@ -15,7 +15,6 @@ function ShowTime(){
     document.getElementById('nowdate').innerHTML = '&nbsp'+y+'年'+mo+'月'+d+'日';
     setTimeout('ShowTime()');
     }
-//var sel
 function processFormData() {
     const form = document.forms['updat'];
     const should = form.elements.should.value;
