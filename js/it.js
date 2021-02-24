@@ -15,14 +15,18 @@ function ShowTime(){
     document.getElementById('nowdate').innerHTML = '&nbsp'+y+'年'+mo+'月'+d+'日';
     setTimeout('ShowTime()');
     }
-function processFormData() {
-    const form = document.forms['updat'];
+function shouldreal() {
+    const form = document.forms['srf'];
     const should = form.elements.should.value;
     const real = form.elements.real.value;
-//============================================================
-    var sel =form.elements.sel.value;
     document.getElementById('should').innerHTML = should;
     document.getElementById('real').innerHTML = real;
+}
+function processFormData() {
+    const form = document.forms['updat'];
+//============================================================
+    var sel =form.elements.sel.value;
+
     var NowDate=new Date();
     var h=NowDate.getHours();
     var mi=NowDate.getMinutes();
