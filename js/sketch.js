@@ -1,73 +1,57 @@
-let theta = 0.5;
-let v = 0;
-let t = 0;
-const dt = 1 / 40;
-let trailX = [];
-let trailY = [];
-let lSlider;
-let mSlider;
-
+let angle;
+let angleV = 0;
+let angleA = 0;
+let angleV2 = 0;
+let angleA2 = 0;
+let bob;
+let len;
+let len2;
+let origin;
+let gravity = 0.98;
 function setup() {
-  createCanvas(windowWidth*0.99, windowHeight*0.98);
-  let h = windowHeight;
-  frameRate(144);
+    createCanvas(windowWidth*0.987, windowHeight*0.983);    //背景大小
+    origin = createVector(windowWidth/2, 0);    //固定點
 
-  lSlider =createSlider(0.1 * h, 0.9 * h, 0.5 * h, 0.05 * h);
-  lSlider.position(85, windowHeight*0.88-10);
+    angle = PI / 4;
+    bob = createVector();
+    len = 500;
 
-  mSlider = createSlider(5, 25, 15, 1);
-  mSlider.position(85, windowHeight*0.92-10);
+    angle2 = PI / 4;
+    bob2 = createVector();
+    len2 = 250;
 }
-
 function draw() {
-  background("#f8f1f1");
+    background("#f8f1f1");      //背景顏色
 
-  let length = lSlider.value();
-  let mass = mSlider.value();
-  t = t + 1;
-  let a = -1 * 980/length * sin(theta);
-  v = v + (a * dt);
-  theta = theta + (v * dt);
-  let x = (0.5 * windowWidth) + (length * sin(theta));
-  let y = length * cos(theta);
+    let force = gravity * sin(angle);
+    angleA = (-1 * force) / len;
+    angleV += angleA;
+    angle += angleV;
 
-  if (t % 1 === 0) {
-    if (trailX.length > 31) {
-      trailX.splice(0, 1);
-      trailY.splice(0, 1);
-    }
-    trailX.push(x);
-    trailY.push(y)
-  }
+    bob.x = len * sin(angle) + origin.x;
+    bob.y = len * cos(angle) + origin.y;
 
-  push();
-  stroke('#eb5e0b');
-  strokeWeight(4);
-  line(windowWidth / 2, 0, x, y)
-  pop();
+    strokeWeight(4);
+    stroke('#eb5e0b');
+    line(origin.x, origin.y, bob.x, bob.y);
+    fill("#5eaaa8");
+    noStroke();
+    circle(bob.x, bob.y, 64);
+//=================================================
+    let force2 = gravity * sin(angle2-angle);
+    angleA2 = (-1 * (force2)) / len2;
+    angleV2 += angleA2;
+    angle2 += angleV2;
 
-  push();
-  stroke('#eb5e0b');
-  strokeWeight(4);
-  line(x, y,x+100,y+100)
-  pop();
+    bob2.x = len2 * sin(angle2) + bob.x;
+    bob2.y = len2 * cos(angle2) + bob.y;
 
-  push();
-  fill("#5eaaa8");
-  noStroke();
-  circle(x, y, 3* mass);
-  pop();
-
-  push();
-  fill(163, 210, 202, 20);
-  noStroke();
-  for (let i = 0; i < trailX.length; i++) {
-    circle(trailX[i], trailY[i], 3 * mass)
-  }
-  pop();
-
-  textSize(24);
-  text('length',10, windowHeight*0.88);
-  text('mass',10, windowHeight*0.92);
-  text('這是一個單擺模型，作為渾沌擺的試做測試',10,windowHeight*0.96)
+    strokeWeight(4);
+    stroke('#eb5e0b');
+    line(bob.x, bob.y, bob2.x, bob2.y);
+    fill("#5eaaa8");
+    noStroke();
+    circle(bob2.x, bob2.y, 64);
+//    console.log(windowWidth);
+//    console.log(PI);
 }
