@@ -9,3 +9,5 @@ body{background-color:#FCEFEE;}
 #now{text-align:center;font-weight:bold;font-size:69px;color:#747f82;}
 #upd{position:absolute;right:80px;bottom:80px;}
 #Check_i{text-align:center;font-weight:bold;font-size:50px;color:#747f82;}
+
+#brace{background-image:url('../img/163.jpg');background-repeat:no-repeat;background-attachment:fixed;background-position:center center}
