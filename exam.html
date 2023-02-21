@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exam</title>
+    <meta charset="UTF-8">
+    <link href="./css/star.css" rel=stylesheet type="text/css">
+    <script src="./js/it.js" type="text/javascript"></script>
+</head>
+
+<body onload="ShowTime()">
+<div id="now">
+    <div id="nowdate"></div>
+    <div id="nowtime"></div>
+    <br>
+    應到人數：
+    <div id="should"></div>
+    實到人數：
+    <div id="real"></div>
+    交卷時間：
+    <div id="sel"></div>
+</div>
+<div id="upd">
+    <form name="srf">
+        <br>應到人數 <input maxlength="3" name="should" size="1">
+        <br>實到人數 <input maxlength="3" name="real" size="1">
+        <input onclick="shouldreal()" type="button" value="update">
+    </form>
+    <br>考試時間
+    <form id="updat" name="updat">
+        <select name="sel">
+            <option value="0">請選擇時間</option>
+            <option value="1">1 hr</option>
+            <option value="1.5">1.5 hr</option>
+            <option value="2">2 hrs</option>
+            <option value="2.5">2.5 hrs</option>
+            <option value="3">3 hrs</option>
+            <option value="3.5">3.5 hrs</option>
+            <option value="4">4 hrs</option>
+            <option value="4.5">4.5 hrs</option>
+        </select>
+        <input onclick="processFormData();" type="button" value="update">
+    </form>
+    <!--
+        <br>
+        <input type="number" min="0" max="23" placeholder="00">:
+        <input type="number" min="0" max="59" placeholder="00">
+        <input type="reset" value="Reset">
+        -->
+</div>
+</body>
+</html>
